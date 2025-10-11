@@ -1,0 +1,10 @@
+.notFound {
+      display: "flex";
+      flexDirection: "column";
+      justifyContent: "center";
+      alignItems: "center";
+      height: "100vh";
+      textAlign: "center";
+      backgroundColor: "#f5f5f5";
+      color: "#333";
+}
