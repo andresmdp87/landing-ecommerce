@@ -1,12 +1,13 @@
 import { useGetCategories } from "../../hooks/useGetCategories"
 import CategoryItem from "../CategoryItem/CategoryItem"
 import loadingGif from "../../assets/loading.gif"
+import styles from './CategoriesListContainer.module.css'
 
 const CategoriesListContainer = () => {
     const { categories, loading } = useGetCategories()
-    if (loading) return <img src={loadingGif} alt="Cargando" width={30} height={30} /> 
+    if (loading) return <div><br /><br /><br /><img src={loadingGif} alt="Cargando" width={30} height={30} /> </div>
     return (
-        <div>
+        <div className={styles.container}>
             {
                 categories.map((category, index) => <CategoryItem key={index} category={category} />)
             }

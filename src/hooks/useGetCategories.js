@@ -22,7 +22,7 @@ export function useGetCategories() {
             .then((response) => setCategories(response))
             .catch(() => console.log("Error al cargar las categorías"))
             .finally(() => setLoading(false))
-    }, [])
+    }, []);
 
 
     return {categories,loading}
