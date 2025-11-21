@@ -4,7 +4,7 @@ Este proyecto se desarrolló como entrega de trabajo final para el curso de Reac
 
 ![imagenapp](/public/Home.jpg)
 
-Se trabajó con una colección de categorías y otra de productos para el despliegue de los items, cada producto se relaciona con una categoría. Ambas entidades se obtienen desde firebase y ahi mismo se almacenan las compras realizadas.
+Se trabajó con una colección de categorías y otra de productos para el despliegue de los items, cada producto se relaciona con una categoría. Ambas entidades se obtienen desde firestore y ahi mismo se almacenan las compras realizadas.
 
 Pantalla de categorías:
 
