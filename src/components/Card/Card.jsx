@@ -2,7 +2,7 @@ import './Card.css'
 
 const Card = ({children})=>{
     return(
-        <div className="container">
+        <div>
             {children}
         </div>
     )

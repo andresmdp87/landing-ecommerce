@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.7rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.homeBtn {
+  background: #1a7f37;
+  color: #fff;
+  padding: 0.8rem 1.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s ease;
+}
+
+.homeBtn:hover {
+  background: #16682e;
+}

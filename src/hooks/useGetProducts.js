@@ -1,30 +1,33 @@
 import { useState, useEffect } from 'react'
-import local_products from "../data/products.json"
+import { collection, getDocs, query, where} from "firebase/firestore"
+import { db } from "../services/firebase"
 
 export function useGetProducts(categoryId) {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
 
-    useEffect(() => {
-        const getProductsByCategory = () => {
-            const productsFiltered = local_products.filter(product=>product.categoryId===Number(categoryId))
-
-            const promise = new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve(productsFiltered);
-                }, 1000)
-            });
-
-            return promise;            
-        };
-
-        setLoading(true);
-
-        getProductsByCategory()
-            .then((response) => setProducts(response))
-            .catch(() => console.log("Error al cargar los productos"))
-            .finally(() => setLoading(false))
-    }, []);
+    useEffect(()=>{
+        setLoading(true)
+        const prodCollection = categoryId 
+        ? query(collection(db, "productos"), where("categoryId", "==", Number(categoryId))) 
+        : collection(db, "productos")
+        getDocs(prodCollection)
+        .then((res)=>{
+            console.log(res.docs)
+            const list = res.docs.map((doc)=>{
+                return{
+                    id:doc.id,
+                    ...doc.data()
+                }
+            })
+            console.log(list)
+            setProducts(list)
+        })
+        .catch((error)=>{
+            console.log(error)
+        })
+        .finally(()=> setLoading(false))
+    } ,[categoryId])
 
     return {products, loading}
 }

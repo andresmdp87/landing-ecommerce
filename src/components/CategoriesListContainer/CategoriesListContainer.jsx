@@ -5,7 +5,13 @@ import styles from './CategoriesListContainer.module.css'
 
 const CategoriesListContainer = () => {
     const { categories, loading } = useGetCategories()
-    if (loading) return <div><br /><br /><br /><img src={loadingGif} alt="Cargando" width={30} height={30} /> </div>
+     if (loading) {
+            return (
+            <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+                <img src={loadingGif} alt="Cargando" width={30} height={30} />
+            </div>
+            )
+        }
     return (
         <div className={styles.container}>
             {

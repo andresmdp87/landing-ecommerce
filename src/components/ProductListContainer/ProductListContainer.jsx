@@ -4,17 +4,25 @@ import { useParams } from "react-router-dom"
 import loadingGif from "../../assets/loading.gif"
 import styles from "./ProductListContainer.module.css"
 
+
 const ProductListContainer = () => {
     const { categoryId } = useParams()
     const { products, loading } = useGetProducts(categoryId)
 
-    if (loading) return <img src={loadingGif} alt="Cargando" width={30} height={30} /> 
+   if (loading) {
+          return (
+          <div style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }}>
+              <img src={loadingGif} alt="Cargando" width={30} height={30} />
+          </div>
+          )
+      }
+    
     return (
-        <div className={styles.container}>
+       <div className={styles.container}>
             {
                 products.map((product, index) => <ProductItem key={index} product={product} />)
             }
-        </div>
+       </div>
     )
 }
 

@@ -1,4 +1,4 @@
-[
+export const categorias = [
     {
         "id":1,
         "title":"Gadgets",
